@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+    <thead>
+      <tr class='text-center'>
+        <th scope="col">Preview</th>
+        <th scope="col">Hex</th>
+        <th scope="col">Click to  </th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for obj in object_list %}
+        <tr class='text-center'>
+            <td style='background-color: {{obj.hex}}'></td>
+            <td>{{obj.hex}}</td>
+            <td>
+                <button class="btn btn-outline-primary copy-btn" data-hex='{{obj.hex}}'>Copy</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock  %}
